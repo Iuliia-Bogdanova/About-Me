@@ -8,68 +8,74 @@
 </head>
 <body>
     <h1>ОПРОСНЫЙ ЛИСТ</h1>
-    <img src="Fotoram.io (3).jpg" alt="cat"> <br>
-    <label for="name1"> кличка питомца </label>
-        <div><input type="text"/></div>
-    <label for="name2"> порода </label>
-        <div><input type="text"/></div>
-    <p>пол питомца</p>
+    <form name="catForm" action="#" method="POST">
+        <img src="Fotoram.io (3).jpg" id="catImage" onclick="changeMe()" alt="cat"> <br>
+        <label for="catName">1. Кличка вашего питомца</label>
+        <p><input type="text" name="catName" id="catName" placeholder="Кличка" autofocus></p>
+            <!--<div><input type="text"/></div>-->
+        <label for="name2"> порода </label>
+            <div><input type="text"/></div>
+        <p>пол питомца</p>
+            <div>
+                <input type="radio" id="contactChoice1" name="contact" value="email">
+                    <label for="contactChoice1">самец</label>
+                <input type="radio" id="contactChoice2" name="contact" value="phone">
+                    <label for="contactChoice2">самка</label>
+            </div>
+        <p>питомец кастрирован/стерилизован?</p>
+            <div>
+                <input type="radio" id="contactChoice3" name="contact" value="email">
+                    <label for="contactChoice1">да</label>
+                <input type="radio" id="contactChoice4" name="contact" value="phone">
+                    <label for="contactChoice2">нет</label>
+            </div> 
+        <label for="name3"> дата рождения питомца </label>
+            <div>
+                <input type="date"/>
+            </div>
+        <p>состояние здоровья питомца</p>
+            <div>
+                <input type="checkbox"/>
+            </div>
+            <div>
+                <textarea rows="8"></textarea>
+            </div>
+        <label for="name4"> ФИО владельца </label>
+            <div>
+                <input type="text"/>
+            </div>
+        <label for="name5"> контактные данные владельца </label>
+            <div>
+                <input type="text"/>
+            </div> 
+        <p>Готово! Сохраните ваши ответы</p> 
+        <p><input type="button" name="save" value="Сохранить" onclick="clickMe()"></p> 
+        <p>как с вами лучше связаться:</p>
+            <div>
+                <input type="radio" id="contactChoice5"
+                name="contact" value="email">
+                <label for="contactChoice1">по телефону</label>
+                <input type="radio" id="contactChoice6"
+                name="contact" value="phone">
+                <label for="contactChoice2">смс сообщение</label>
+                <input type="radio" id="contactChoice7"
+                name="contact" value="mail">
+                <label for="contactChoice3">по электронной почте</label>
+                <input type="radio" id="contactChoice8"
+                name="contact" value="email">
+                <label for="contactChoice4">мессенджер </label>
+                    <select>
+                        <option value="1"> Viber </option>
+                        <option value="2"> WhatsApp </option>
+                        <option value="3"> Telegram </option>
+                    </select>
+            </div>
         <div>
-            <input type="radio" id="contactChoice1" name="contact" value="email">
-                <label for="contactChoice1">самец</label>
-            <input type="radio" id="contactChoice2" name="contact" value="phone">
-                <label for="contactChoice2">самка</label>
+            <input type="checkbox">я подтверждаю указанную информацию
         </div>
-    <p>питомец кастрирован/стерилизован?</p>
-        <div>
-            <input type="radio" id="contactChoice3" name="contact" value="email">
-                <label for="contactChoice1">да</label>
-            <input type="radio" id="contactChoice4" name="contact" value="phone">
-                <label for="contactChoice2">нет</label>
-        </div> 
-    <label for="name3"> дата рождения питомца </label>
-        <div>
-            <input type="date"/>
-        </div>
-    <p>состояние здоровья питомца</p>
-        <div>
-            <input type="checkbox"/>
-        </div>
-        <div>
-            <textarea rows="8"></textarea>
-        </div>
-    <label for="name4"> ФИО владельца </label>
-        <div>
-            <input type="text"/>
-        </div>
-    <label for="name5"> контактные данные владельца </label>
-        <div>
-            <input type="text"/>
-        </div>   
-    <p>как с вами лучше связаться:</p>
-        <div>
-            <input type="radio" id="contactChoice5"
-            name="contact" value="email">
-            <label for="contactChoice1">по телефону</label>
-            <input type="radio" id="contactChoice6"
-            name="contact" value="phone">
-            <label for="contactChoice2">смс сообщение</label>
-            <input type="radio" id="contactChoice7"
-            name="contact" value="mail">
-            <label for="contactChoice3">по электронной почте</label>
-            <input type="radio" id="contactChoice8"
-            name="contact" value="email">
-            <label for="contactChoice4">мессенджер </label>
-                <select>
-                    <option value="1"> Viber </option>
-                    <option value="2"> WhatsApp </option>
-                    <option value="3"> Telegram </option>
-                </select>
-        </div>
-    <div>
-        <input type="checkbox">я подтверждаю указанную информацию
-    </div>
-    <button> отправить </button>
+        <button> отправить </button>
+    </form>
+    
     <script src="index.js"></script>
 </body>
 </html>
