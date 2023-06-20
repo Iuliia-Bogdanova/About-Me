@@ -1,0 +1,22 @@
+/* font-family: 'TTCommons-Regular', cursive;
+font-family: 'Redcollar', cursive; */
+
+@font-face {
+    font-family: 'TTCommons-Regular';
+    src: url(../assets/fonts/tt-commons-regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redcollar';
+    src: url(../assets/fonts/Redcollar.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #000000;
+}
