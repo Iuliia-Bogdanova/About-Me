@@ -1,8 +1,5 @@
-/* font-family: 'TTCommons-Regular', cursive;
-font-family: 'Redcollar', cursive; */
-
 @font-face {
-    font-family: 'TTCommons-Regular';
+    font-family: 'TTCommons-Regular', cursive;
     src: url(../assets/fonts/tt-commons-regular.woff2) format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -10,29 +7,59 @@ font-family: 'Redcollar', cursive; */
 }
 
 @font-face {
-    font-family: 'Redcollar';
+    font-family: 'Redcollar', cursive;
     src: url(../assets/fonts/Redcollar.woff2) format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
+:root {
+    --font-main: 'TTCommons-Regular';
+    --font-secondary: 'Redcollar';
+    --font-weight: 400;
+    --primary-color: #000000;
+    --secondary-color: #F51B1B;
+    --text-color: #ffffff;
+}
+
 body {
     display: block;
-    background: rgba(0, 0, 0, 1);
-    font-family: 'TTCommons-Regular';
-    font-weight: 400;
-    color: rgba(255, 255, 255, 1);
-    
+    box-sizing: border-box;
+    overflow: auto;
+    background: var(--primary-color);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+body::-webkit-scrollbar {
+    background: inherit;
+    width: 6px;
+    height: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-color);
+}
+
+body::-webkit-scrollbar-corner {
+    display: none;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 1360px;
+    max-width: 1390px;
     width: 100%;
     height: 100%;
-    margin: 40px;
+    margin: 40px auto;
+    padding: 0 15px;
     
     border: 1px solid red;
 }
@@ -45,23 +72,37 @@ body {
     height: 24px;
     margin-top: -12px;
     gap: 24px;
-    border: 1px solid orange;
+    
+    
+}
+
+.header__logo,
+.header__front,
+.header__front::before {
+    transition: transform 0.2s ease;
+}
+
+.header__logo:hover,
+.header__front:hover {
+    transform: scale(0.95);
+    opacity: 0.7;
 }
 
 .header__front::before {
     position: absolute;
     content: "";
-    background-image: url(../assets/img/icons/Union-f.svg);
+    background-image: url(../assets/img/icons/Union-front.svg);
     width: 11px;
     height: 24px;
     right: 55px;
-    bottom: 2px;
-    /* border: 1px solid yellow; */
+    bottom: 2%;
 }
 
 .page {
     display: flex;
     gap: 30px;
+    justify-content: space-between;
+    
     border: 1px solid green;
 }
 
@@ -69,6 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 25%;
+    height: auto;
     margin-top: -12px;
     
 
@@ -77,16 +119,45 @@ body {
 
 .contacts__photo{
     display: flex;
+    position: relative;
     flex-direction: column;
-    height: 50%;
+    
+    /* border: 1px solid orange; */
+}
+
+.contacts__photo::after {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/icons/collar.svg);
+    width: 150px;
+    height: 80px;
+    top: 22%;
+    left: 39%;
+    rotate: 10deg;
 }
 
 .contacts__red {
     display: flex;
+    position: relative;
     flex-direction: column;
-    height: 50%;
-    background-color: #F51B1B;
+    background-color: var(--secondary-color);
+    border-radius: 40px 40px 0 0;
+    /* border: var(--secondary-color); */
     padding: 40px 24px;
+    transform: translateY(-13%);
+}
+
+.contacts__red::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/icons/Union-contacts.svg);
+    width: 62px;
+    height: 20px;
+    top: -5%;
+    left: 40%;
+    /* border: var(--secondary-color); */
+    
+    /* border: 1px solid yellow; */
 }
 
 .contacts__item {
