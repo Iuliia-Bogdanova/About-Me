@@ -140,7 +140,6 @@ li {
     top: 21%;
     left: 38%;
     rotate: 9deg;
-    /* flex-shrink: 0; */
 }
 
 .contacts__red {
@@ -159,9 +158,11 @@ li {
     content: "";
     background-image: url(../assets/img/icons/Union-contacts.svg);
     width: 62px;
-    height: 20px;
-    top: -4%;
+    height: 24px;
+    top: -4.75%;
     left: 40%;
+
+    /* border: 1px solid blue; */
 }
 
 .name {
@@ -230,7 +231,7 @@ li {
     content: "";
     background-image: url(../assets/img/icons/tg.svg);
     width: 23px;
-    height: 21px;
+    height: 20px;
     left: 0;
 }
 
@@ -285,6 +286,8 @@ li {
     height: 20px;
     left:57px;
     transform: translateY(-138%);
+
+    /* border: 1px solid blue; */
 }
 
 .divider {
