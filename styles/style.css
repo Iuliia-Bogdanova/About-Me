@@ -23,9 +23,31 @@
     --text-color: #ffffff;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*, 
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, 
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
 body {
     display: block;
-    box-sizing: border-box;
     overflow: auto;
     background: var(--primary-color);
     font-family: var(--font-main);
@@ -52,37 +74,31 @@ body::-webkit-scrollbar-corner {
     display: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul, 
-li {
-    list-style-type: none;
-    padding: 0;
-}
-
 .wrapper {
     display: flex;
     flex-direction: column;
     max-width: 1390px;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     margin: 40px auto;
     padding: 0 15px;
     
-    /* border: 1px solid red; */
+    border: 1px solid red;
+
 }
 
 .header {
     display: flex;
     position: relative;
+    max-width: 100%;
     justify-content: flex-end;
     align-items: center;
     height: 24px;
     margin-top: -12px;
+    /* padding-right: 20px; */
     gap: 24px;
+
+    border: 1px solid violet;
 }
 
 .header__logo,
@@ -107,22 +123,23 @@ li {
 }
 
 .page {
+    min-width: 100%;
     display: flex;
     gap: 30px;
     justify-content: space-between;
     
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
 .contacts {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    max-width: 25%;
     min-height: 100vh;
     /* height: auto; */
     margin-top: -12px;
 
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 
 .contacts__photo{
@@ -144,7 +161,6 @@ li {
 
 .contacts__red {
     display: flex;
-    flex-wrap: wrap;
     position: relative;
     flex-direction: column;
     background-color: var(--secondary-color);
@@ -161,8 +177,6 @@ li {
     height: 24px;
     top: -4.75%;
     left: 40%;
-
-    /* border: 1px solid blue; */
 }
 
 .name {
@@ -195,12 +209,23 @@ li {
     letter-spacing: -2%;
     margin-top: 20px;
     padding: 0;
+    word-wrap: break-word;
 }
 
 .item {
     padding-left: 30px;
     padding-bottom: 20px;
     transition: transform 0.2s ease;
+}
+
+.no-wrap__mail,
+.no-wrap__gh {
+    display: flex;
+}
+
+.wrap__mail,
+.wrap__gh {
+    display: none;
 }
 
 .item:hover {
@@ -250,13 +275,17 @@ li {
     width: 75%;
     min-height: 100vh;
 
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 
 .motivation {
     width: 68%;
     height: auto;
     margin-bottom: 38px; 
+}
+
+p:not(:last-child) {
+    padding-bottom: 8px;
 }
 
 .motivation__text {
@@ -304,25 +333,22 @@ li {
     align-items: flex-start;
     margin: 20px 0;
     
-    /* gap: 72px; */
+    gap: 72px;
     
     
 
-    /* border: 1px solid yellow; */
+    border: 1px solid yellow;
 }
 .about__info {
     width: 124px;
     height: auto;
-    margin: 0 72px 0 0;
+    margin-right: 72px;
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 100%;
     text-transform: capitalize;
-    
    
-    
-
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
 }
 .training-jobs {
     display: flex;
@@ -332,16 +358,12 @@ li {
     letter-spacing: -0.18px;
     margin-bottom: 8px;
 }
-.office {
-}
+
 .occupation,
 .date {
     opacity: 0.4;
 }
-.jobs {
-}
-.skills {
-}
+
 .competencies {
     display: flex;
     justify-content: flex-start;
@@ -349,11 +371,166 @@ li {
     margin-top: 0;
     gap: 32px;
 
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .item-comp {
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.18px;
     
+}
+
+@media (max-width: 1320px) {
+    .contacts__red::before {
+        height: 20px;
+        top: -4%;
+    }
+    .no-wrap__mail {
+        display: none;
+    }
+    .wrap__mail {
+        display: flex;
+    }
+}
+
+@media (max-width: 1060px) {
+    .contacts__photo::after {
+        top: 16%;
+        left: 30%;
+    }
+    .contacts__red::before {
+        height: 18px;
+        top: -4%;
+    }
+    .no-wrap__gh {
+        display: none;
+    }
+    .wrap__gh {
+        display: flex;
+    }
+}
+
+@media (max-width: 876px) {
+    .contacts__photo::after {
+        top: 14%;
+        left: 24%;
+    }
+    .contacts__red::before {
+        height: 16px;
+        top: -3.5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        max-width: 38%;
+        margin: 20px auto;
+    }
+    .contacts__photo::after {
+        top: 18%;
+        left: 34%;
+    }
+    .about {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .motivation {
+        min-width: 90%;
+    }
+    .about__info {
+        margin-right: 0;
+        gap: 0;
+    }
+    .info-item {
+        gap: 30px;
+    }
+    .competencies {
+        gap: 10px;
+
+        border: 1px solid red;
+    }
+}
+
+@media (max-width: 426px) {
+    .wrapper {
+        max-width: 360px;
+        margin: 20px auto;
+        padding: 0;
+    }
+    .header {
+        justify-content: flex-start;
+        height: 22px;
+        margin-top: 0;
+    }
+    .header__front::before {
+        right: 172px;
+    }
+    .page {
+        flex-direction: column;
+    }
+    .contacts {
+        max-width: 100%;
+        margin: 30px auto;
+    }
+    .contacts__photo::after {
+        top: 22%;
+        left: 38%;
+    }
+    .contacts__red {
+        padding: 24px 16px;
+    }
+    .contacts__red::before {
+        top: -4.3%;
+    }
+    .name {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.4%;
+    }
+    .city,
+    .contacts__item {
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: -0.32%;
+    }
+    .no-wrap__mail,
+    .no-wrap__gh {
+        display: flex;
+    }
+    .wrap__mail,
+    .wrap__gh {
+        display: none;
+    }
+    .about {
+        min-width: 100%;
+    }
+    .motivation {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .motivation__text {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.16px;
+    }
+    .info {
+        padding-top: 27px;
+        padding-left: 15px;
+        padding-bottom: 30px;
+    }
+    .info::before {
+        left: 40%;
+    }
+    .info-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .training-jobs {
+        line-height: 22px;
+        letter-spacing: -0.16px;
+        margin-bottom: 8px;
+    }
+    .competencies {
+        gap: 20px;
+    }
 }
