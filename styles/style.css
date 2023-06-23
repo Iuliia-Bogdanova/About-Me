@@ -267,7 +267,7 @@ body::-webkit-scrollbar-corner {
 .motivation {
     width: 68%;
     height: auto;
-    margin-bottom: 38px; 
+    margin-bottom: 80px; 
 }
 
 p:not(:last-child) {
@@ -299,7 +299,7 @@ p:not(:last-child) {
     width: 60px;
     height: 20px;
     left:57px;
-    transform: translateY(-138%);
+    transform: translateY(-142%);
 }
 
 .divider {
@@ -407,14 +407,19 @@ p:not(:last-child) {
     }
     .about {
         max-width: 60%;
-        margin: 0 auto;
+        margin: 26px auto;
     }
     .motivation {
         min-width: 90%;
+        margin-bottom: 60px;
     }
     .about__info {
         margin-right: 0;
         gap: 0;
+    }
+    .info::before {
+        left: 40%;
+        transform: translateY(-136%);
     }
     .info-item {
         gap: 30px;
@@ -491,10 +496,6 @@ p:not(:last-child) {
         padding-left: 15px;
         padding-bottom: 30px;
         margin-bottom: 58px;
-    }
-    .info::before {
-        left: 40%;
-        transform: translateY(-132%);
     }
     .info-item {
         flex-direction: column;
