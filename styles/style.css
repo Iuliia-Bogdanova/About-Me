@@ -411,7 +411,7 @@ p:not(:last-child) {
     }
     .motivation {
         min-width: 90%;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     .about__info {
         margin-right: 0;
@@ -445,6 +445,8 @@ p:not(:last-child) {
     }
     .page {
         flex-direction: column;
+        margin-top: 20px;
+        gap: 0;
     }
     .contacts {
         max-width: 100%;
@@ -484,7 +486,6 @@ p:not(:last-child) {
     }
     .motivation {
         width: 100%;
-        margin-bottom: 24px;
     }
     .motivation__text {
         font-size: 18px;
@@ -508,5 +509,27 @@ p:not(:last-child) {
     }
     .competencies {
         gap: 20px;
+    }
+}
+
+@media (max-width: 340px) {
+    .header__front::before {
+        right: 39%;
+    }
+    .contacts {
+        margin-bottom: 0;
+    }
+    .contacts__photo::after {
+        top: 19%;
+        left: 34%;
+    }
+    .no-wrap__mail {
+        display: none;
+    }
+    .wrap__mail {
+        display: flex;
+    }
+    .info {
+        margin-top: 20px;
     }
 }
