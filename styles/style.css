@@ -137,7 +137,7 @@ body::-webkit-scrollbar-corner {
     flex-direction: column;
 }
 
-.contacts__photo::after {
+/* .contacts__photo::after {
     position: absolute;
     content: "";
     background-image: url(../assets/img/icons/collar.svg);
@@ -146,7 +146,7 @@ body::-webkit-scrollbar-corner {
     top: 21%;
     left: 38%;
     rotate: 9deg;
-}
+} */
 
 .contacts__red {
     display: flex;
